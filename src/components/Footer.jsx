@@ -6,8 +6,12 @@ const Footer = () => {
 	return (
 		<>
 			<footer className="footer">
+				<RulesModal open={open} setOpen={setOpen} />
 				<div className="container">
-					<button className="btn-rules ls-25 fs-16 text-uppercase ">
+					<button
+						onClick={() => setOpen(true)}
+						className="btn-rules ls-25 fs-16 text-uppercase "
+					>
 						Rules
 					</button>
 				</div>
