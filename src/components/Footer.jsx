@@ -3,10 +3,12 @@ import RulesModal from "./RulesModal";
 
 const Footer = () => {
 	const [open, setOpen] = useState(false);
+	const [gameMode, setGameMode] = useState(false);
+
 	return (
 		<>
 			<footer className="footer">
-				<RulesModal open={open} setOpen={setOpen} />
+				<RulesModal open={open} setOpen={setOpen} gameMode={gameMode} />
 				<div className="container">
 					<button
 						onClick={() => setOpen(true)}
