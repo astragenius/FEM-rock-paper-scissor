@@ -8,12 +8,23 @@ const RulesModal = ({ open, setOpen, gameMode }) => {
 	const dialogRef = useRef(null);
 
 	const variants = {
-		open: { rotate: 180, scale: 1 },
-		close: { rotate: 180, scale: 0 },
-		transition: {
-			type: "spring",
-			stiffness: 260,
-			damping: 20,
+		open: {
+			scale: 1,
+			transition: {
+				type: "spring",
+				stiffness: 260,
+				damping: 20,
+			},
+		},
+		close: {
+			scale: 0,
+
+			transition: {
+				delay: 0.5,
+				type: "spring",
+				stiffness: 400,
+				damping: 40,
+			},
 		},
 	};
 
@@ -37,9 +48,9 @@ const RulesModal = ({ open, setOpen, gameMode }) => {
 			>
 				<div className="modalHeader">
 					<h3 className="fs-32 text-uppercase text-dark">Rules</h3>
-					<button onClick={() => setOpen(false)} className="btn-close">
+					<motion.button onClick={() => setOpen(false)} className="btn-close">
 						<img src={closeIcon} alt="" />
-					</button>
+					</motion.button>
 				</div>
 				<img
 					className="ruleImage"
