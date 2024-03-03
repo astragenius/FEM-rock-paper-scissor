@@ -310,6 +310,35 @@ button {
 	}
 }
 
+/* GameBoard */
+.gameBoard {
+	/* border: 2px solid magenta; */
+}
+
+/* GameSymbol */
+
+.gameSymbol {
+	display: grid;
+	place-items: center;
+	width: 198px;
+	aspect-ratio: 1;
+	border-bottom: 11px solid #9d1634;
+	background: var(--clr-rock);
+	border-radius: 50%;
+	/* filter: drop-shadow(-10, 10, 3, 0, #000000d6); */
+	filter: drop-shadow(16px 0px #00000078);
+
+	.symbolContainer {
+		display: grid;
+		place-items: center;
+		aspect-ratio: 1;
+		width: 150px;
+		border-radius: 50%;
+		border-top: 11px solid #babfd4;
+		background-color: white;
+	}
+}
+
 /* Footer */
 
 .footer {
