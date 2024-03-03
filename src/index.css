@@ -23,7 +23,7 @@ figure,
 blockquote,
 dl,
 dd {
-	margin-block-end: 0;
+	margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -35,7 +35,7 @@ ol[role="list"] {
 /* Set core body defaults */
 body {
 	min-height: 100vh;
-	line-height: 1.5;
+	line-height: 1;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -85,5 +85,229 @@ textarea:not([rows]) {
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
-	scroll-margin-block: 5ex;
+	scroll-margin-block: 5px;
+}
+
+@font-face {
+	font-family: "Barlow Semi Condensed";
+	font-style: normal;
+	font-weight: 600;
+	src: url(/public/Fonts/BarlowSemiCondensed-SemiBold.ttf);
+}
+@font-face {
+	font-family: "Barlow Semi Condensed";
+	font-style: normal;
+	font-weight: 700;
+	src: url(/public/Fonts/BarlowSemiCondensed-Bold.ttf);
+}
+
+:root {
+	/* Primary */
+	--clr-scissors: linear-gradient(
+		180deg,
+		hsl(39, 89%, 49%) 0%,
+		hsl(40, 84%, 53%) 100%
+	);
+	--clr-paper: linear-gradient(
+		180deg,
+		hsl(230, 89%, 62%) 0%,
+		hsl(230, 89%, 65%) 100%
+	);
+	--clr-rock: linear-gradient(
+		180deg,
+		hsl(349, 71%, 52%) 0%,
+		hsl(349, 70%, 56%) 100%
+	);
+	--clr-lizard: linear-gradient(
+		180deg,
+		hsl(261, 73%, 60%) 0%,
+		hsl(261, 72%, 63%) 100%
+	);
+	--clr-spock: linear-gradient(
+		180deg,
+		hsl(189, 59%, 53%) 0%,
+		hsl(189, 58%, 57%) 100%
+	);
+
+	/* Neutral Text colors */
+
+	--clr-dark-text: hsl(229, 25%, 31%);
+	--clr-score-text: hsl(229, 64%, 46%);
+	--clr-header-outline: hsl(217, 16%, 45%);
+
+	/* background */
+	--radial-bg: radial-gradient(
+		circle,
+		hsl(214, 47%, 23%) 0%,
+		hsl(237, 49%, 15%) 100%
+	);
+
+	--clr-base: white;
+
+	/* fonts */
+
+	--system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--ff-base: "Barlow Semi Condensed";
+
+	/* font-weight */
+
+	--fw-600: 600;
+	--fw-700: 700;
+
+	/* font-size */
+
+	--fs-10: 0.625rem;
+	--fs-15: 0.9375rem;
+	--fs-base: 1rem;
+	--fs-24: 1.5rem;
+	--fs-40: 2.5rem;
+	--fs-56: 3.5rem;
+	--fs-64: 4rem;
+
+	/* letter spacing */
+
+	--ls-18: 1.88px;
+	--ls-25: 2.5px;
+	--ls-30: 3px;
+
+	/* line height */
+
+	--lh-64: 64 / var(--fs-base);
+	--lh-40: 40 / var(--ff-base);
+	--lh-32: 32 / var(--ff-base);
+}
+
+/* utility classes */
+
+.bg-light {
+	background-color: var(--clr-base);
+}
+
+.text-dark {
+	color: var(--clr-dark-text);
+}
+.text-blue {
+	color: var(--clr-score-text);
+}
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.fs-16 {
+	font-size: var(--fs-base);
+}
+
+.fs-16-10 {
+	font-size: clamp(0.625rem, 0.493rem + 0.5634vi, 1rem);
+}
+
+.fs-24-15 {
+	font-size: clamp(0.9375rem, 0.7394rem + 0.8451vi, 1.5rem);
+}
+
+.fs-64-40 {
+	font-size: clamp(2.5rem, 1.9718rem + 2.2535vi, 4rem);
+}
+
+.ls-25 {
+	letter-spacing: var(--ls-25);
+}
+
+.lh-64 {
+	line-height: var(--lh-64);
+}
+
+.wrapper {
+	max-width: clamp(16rem, 45vw, 70rem);
+	margin-left: auto;
+	margin-right: auto;
+
+	position: relative;
+}
+.container {
+	max-width: clamp(16rem, 90vw, 83rem);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* CSS global styles */
+
+body {
+	position: relative;
+	font-family: var(--ff-base);
+	background: var(--radial-bg);
+	color: var(--clr-base);
+	overflow: hidden;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	color: white;
+}
+
+/* Header */
+
+.score-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 3px solid var(--clr-header-outline);
+	border-radius: 15px;
+
+	padding-inline: clamp(1.4375rem, 5%, 2rem);
+	padding-block: clamp(0.625rem, 2%, 1.125rem);
+
+	margin-block-start: 40px;
+
+	.logo {
+		width: 159px;
+		height: 96px;
+	}
+
+	.score-board {
+		text-align: center;
+		padding-block: clamp(0.625rem, 3%, 0.9275rem);
+		padding-inline: clamp(1.5rem, 5%, 3rem);
+		border-radius: 8px;
+	}
+
+	@media (max-width: 490px) {
+		.logo {
+			width: 83px;
+			height: 48px;
+		}
+	}
+}
+
+/* Footer */
+
+.footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	text-align: right;
+
+	padding-inline-end: 30px;
+	padding-block-end: 30px;
+
+	margin-block-end: 40px;
+
+	@media (max-width: 490px) {
+		text-align: center;
+	}
+}
+
+.btn-rules {
+	border: 1px solid var(--clr-header-outline);
+	border-radius: 8px;
+	padding-inline: 35px;
+	padding-block: 10px;
+}
+.btn-rules:hover {
+	background-color: white;
+	color: var(--clr-dark-text);
 }
