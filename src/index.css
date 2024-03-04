@@ -103,31 +103,15 @@ textarea:not([rows]) {
 
 :root {
 	/* Primary */
-	--clr-scissors: linear-gradient(
-		180deg,
-		hsl(39, 89%, 49%) 0%,
-		hsl(40, 84%, 53%) 100%
-	);
-	--clr-paper: linear-gradient(
-		180deg,
-		hsl(230, 89%, 62%) 0%,
-		hsl(230, 89%, 65%) 100%
-	);
+	--clr-scissors: linear-gradient(180deg, #ec9e0e 0%, #eca922 100%);
+	--clr-paper: linear-gradient(180deg, hsl(230, 89%, 62%) 0%, #5671f5 100%);
 	--clr-rock: linear-gradient(
 		180deg,
 		hsl(349, 71%, 52%) 0%,
 		hsl(349, 70%, 56%) 100%
 	);
-	--clr-lizard: linear-gradient(
-		180deg,
-		hsl(261, 73%, 60%) 0%,
-		hsl(261, 72%, 63%) 100%
-	);
-	--clr-spock: linear-gradient(
-		180deg,
-		hsl(189, 59%, 53%) 0%,
-		hsl(189, 58%, 57%) 100%
-	);
+	--clr-lizard: linear-gradient(180deg, hsl(261, 73%, 60%) 0%, #8c5de5 100%);
+	--clr-spock: linear-gradient(180deg, hsl(189, 59%, 53%) 0%, #52bed1 100%);
 
 	/* Neutral Text colors */
 
@@ -312,21 +296,30 @@ button {
 
 /* GameBoard */
 .gameBoard {
-	/* border: 2px solid magenta; */
+	border: 2px solid magenta;
+
+	background-image: url(./assets/BackgroundImages/bg-triangle.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	display: grid;
+	place-content: center;
+
+	.gameBoardGrid {
+		display: grid;
+	}
 }
 
 /* GameSymbol */
 
 .gameSymbol {
+	flex: 1;
 	display: grid;
 	place-items: center;
 	width: 198px;
 	aspect-ratio: 1;
-	border-bottom: 11px solid #9d1634;
-	background: var(--clr-rock);
+
 	border-radius: 50%;
-	/* filter: drop-shadow(-10, 10, 3, 0, #000000d6); */
-	filter: drop-shadow(16px 0px #00000078);
 
 	.symbolContainer {
 		display: grid;
@@ -337,6 +330,32 @@ button {
 		border-top: 11px solid #babfd4;
 		background-color: white;
 	}
+
+	img {
+		width: 76px;
+		height: 76px;
+	}
+}
+
+.rock {
+	filter: drop-shadow(0px 11px #9d1634);
+	background: var(--clr-rock);
+}
+.paper {
+	filter: drop-shadow(0px 11px #2a45c2);
+	background: var(--clr-paper);
+}
+.scissors {
+	filter: drop-shadow(0px 11px #c76c1b);
+	background: var(--clr-scissors);
+}
+.lizard {
+	filter: drop-shadow(0px 11px #5f37a8);
+	background: var(--clr-lizard);
+}
+.spock {
+	filter: drop-shadow(0px 11px #2d8dab);
+	background: var(--clr-spock);
 }
 
 /* Footer */

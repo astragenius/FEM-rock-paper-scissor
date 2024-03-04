@@ -1,10 +1,9 @@
-import rock from "../assets/icons/icon-rock.svg";
-
-const Symbol = () => {
+const Symbol = ({ name, icon }) => {
+	console.log(icon);
 	return (
-		<div className="gameSymbol">
+		<div className={`gameSymbol ${name}`}>
 			<div className="symbolContainer">
-				<img src={rock} alt="" />
+				<img src={icon} alt="" />
 			</div>
 		</div>
 	);
