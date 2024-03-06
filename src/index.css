@@ -303,17 +303,21 @@ button {
 	background-position: center center;
 
 	display: grid;
-	place-content: center;
+	justify-content: center;
 
 	.gameBoardGrid {
 		display: grid;
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-columns: repeat(4, 1fr);
+		height: 50vh;
+		column-gap: 70px;
 	}
 }
 
 /* GameSymbol */
 
 .gameSymbol {
-	flex: 1;
+	cursor: pointer;
 	display: grid;
 	place-items: center;
 	width: 198px;
@@ -337,17 +341,32 @@ button {
 	}
 }
 
+.gameSymbol:hover {
+	/* transition: all ease-in 0.3s;
+	outline: 35px solid hsla(0, 0%, 59%, 0.1); */
+}
+
 .rock {
-	filter: drop-shadow(0px 11px #9d1634);
+	/* filter: drop-shadow(0px 11px #9d1634); */
+	border-bottom: 11px solid #9d1634;
 	background: var(--clr-rock);
+	grid-area: 1 / 1 / 3 / 3;
+	align-self: center;
 }
 .paper {
-	filter: drop-shadow(0px 11px #2a45c2);
+	/* filter: drop-shadow(0px 11px #2a45c2); */
+	border-bottom: 11px solid #2a45c2;
 	background: var(--clr-paper);
+
+	grid-area: 3 / 2 / 5 / 4;
+	align-self: center;
 }
 .scissors {
-	filter: drop-shadow(0px 11px #c76c1b);
+	/* filter: drop-shadow(0px 11px #c76c1b); */
+	border-bottom: 11px solid #c76c1b;
 	background: var(--clr-scissors);
+	grid-area: 1 / 3 / 3 / 5;
+	align-self: center;
 }
 .lizard {
 	filter: drop-shadow(0px 11px #5f37a8);
