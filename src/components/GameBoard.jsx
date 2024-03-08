@@ -1,6 +1,8 @@
+import bgImageAdvanced from "../assets/BackgroundImages/bg-pentagon.svg";
+import bgImageDefault from "../assets/BackgroundImages/bg-triangle.svg";
 import Symbol from "./Symbol";
 
-const GameBoard = () => {
+const GameBoard = ({ gameMode }) => {
 	const symbolsDefault = [
 		{
 			id: 1,
@@ -46,9 +48,17 @@ const GameBoard = () => {
 			icon: "/public/Icons/icon-spock.svg",
 		},
 	];
+	console.log(bgImageAdvanced);
 	return (
 		<main className="wrapper">
-			<div className="gameBoard">
+			<div
+				style={{
+					backgroundImage: `url(${
+						gameMode ? bgImageDefault : bgImageAdvanced
+					})`,
+				}}
+				className="gameBoard"
+			>
 				<div className="gameBoardGrid">
 					{symbolsDefault.map((symbol) => {
 						return (

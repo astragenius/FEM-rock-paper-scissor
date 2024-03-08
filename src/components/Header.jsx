@@ -1,10 +1,16 @@
-const Header = () => {
+import logoAdvanced from "../assets/icons/logo-bonus.svg";
+import logoDefault from "../assets/icons/logo.svg";
+const Header = ({ gameMode }) => {
 	return (
 		<>
 			<header className="wrapper">
 				<div className="score-header">
 					<h1>
-						<img className="logo" src="/public/Icons/logo.svg" alt="" />
+						<img
+							className="logo"
+							src={gameMode ? logoDefault : logoAdvanced}
+							alt=""
+						/>
 					</h1>
 					<div className="score-board bg-light text-dark">
 						<h2 className="ls-25  text-blue fs-16-10 text-uppercase">Score</h2>

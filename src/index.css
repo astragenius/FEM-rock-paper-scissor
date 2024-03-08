@@ -218,6 +218,8 @@ textarea:not([rows]) {
 	max-width: clamp(16rem, 90vw, 83rem);
 	margin-left: auto;
 	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
 }
 
 /* CSS global styles */
@@ -295,17 +297,28 @@ button {
 }
 
 /* GameBoard */
-.gameBoard {
+.gameBoard,
+.gameBoardAdvanced {
 	border: 2px solid magenta;
 
-	background-image: url(./assets/BackgroundImages/bg-triangle.svg);
+	/* background-image: url(./assets/BackgroundImages/bg-triangle.svg); */
 	background-repeat: no-repeat;
 	background-position: center center;
 
 	display: grid;
 	justify-content: center;
 
+	margin-top: 4rem;
+
 	.gameBoardGrid {
+		display: grid;
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-columns: repeat(4, 1fr);
+		height: 50vh;
+		column-gap: 70px;
+	}
+
+	.gameBoardGridAdvanced {
 		display: grid;
 		grid-template-rows: repeat(4, 1fr);
 		grid-template-columns: repeat(4, 1fr);
@@ -320,7 +333,7 @@ button {
 	cursor: pointer;
 	display: grid;
 	place-items: center;
-	width: 198px;
+	width: 145px;
 	aspect-ratio: 1;
 
 	border-radius: 50%;
@@ -329,21 +342,16 @@ button {
 		display: grid;
 		place-items: center;
 		aspect-ratio: 1;
-		width: 150px;
+		width: 112px;
 		border-radius: 50%;
 		border-top: 11px solid #babfd4;
 		background-color: white;
 	}
 
 	img {
-		width: 76px;
-		height: 76px;
+		width: 44px;
+		aspect-ratio: 1;
 	}
-}
-
-.gameSymbol:hover {
-	/* transition: all ease-in 0.3s;
-	outline: 35px solid hsla(0, 0%, 59%, 0.1); */
 }
 
 .rock {
