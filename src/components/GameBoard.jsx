@@ -1,8 +1,9 @@
-import bgImageAdvanced from "../assets/BackgroundImages/bg-pentagon.svg";
-import bgImageDefault from "../assets/BackgroundImages/bg-triangle.svg";
-import Symbol from "./Symbol";
+import { useState } from "react";
+import GamePlay from "./GamePlay";
+import GameStart from "./GameStart";
 
 const GameBoard = ({ gameMode }) => {
+	const [gameStart, setGameStart] = useState(false);
 	const symbolsDefault = [
 		{
 			id: 1,
@@ -49,26 +50,13 @@ const GameBoard = ({ gameMode }) => {
 		},
 	];
 
-	const symbolRender = gameMode ? symbolsDefault : symbolsBonus;
-
 	return (
 		<main className="wrapper">
-			<div
-				style={{
-					backgroundImage: `url(${
-						gameMode ? bgImageDefault : bgImageAdvanced
-					})`,
-				}}
-				className="gameBoard"
-			>
-				<div className={gameMode ? "gridBase" : "gridAdvanced"}>
-					{symbolRender.map((symbol) => {
-						return (
-							<Symbol key={symbol.id} name={symbol.name} icon={symbol.icon} />
-						);
-					})}
-				</div>
-			</div>
+			{gameStart ? (
+				<GamePlay />
+			) : (
+				<GameStart gameMode={gameMode} setGameStart={setGameStart} />
+			)}
 		</main>
 	);
 };

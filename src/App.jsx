@@ -4,7 +4,7 @@ import GameBoard from "./components/GameBoard";
 import Header from "./components/Header";
 
 function App() {
-	const [gameMode, setGameMode] = useState(false);
+	const [gameMode, setGameMode] = useState(true);
 	return (
 		<>
 			<Header gameMode={gameMode} />

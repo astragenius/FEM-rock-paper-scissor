@@ -178,6 +178,12 @@ textarea:not([rows]) {
 .text-uppercase {
 	text-transform: uppercase;
 }
+.fw-600 {
+	font-weight: var(--fw-600);
+}
+.fw-700 {
+	font-weight: var(--fw-700);
+}
 
 .fs-16 {
 	font-size: var(--fs-base);
@@ -201,6 +207,9 @@ textarea:not([rows]) {
 
 .ls-25 {
 	letter-spacing: var(--ls-25);
+}
+.ls-30 {
+	letter-spacing: var(--ls-30);
 }
 
 .lh-64 {
@@ -299,7 +308,7 @@ button {
 /* GameBoard */
 .gameBoard,
 .gameBoardAdvanced {
-	/* border: 2px solid magenta; */
+	border: 2px solid magenta;
 
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -382,6 +391,33 @@ button {
 	img {
 		width: 44px;
 		aspect-ratio: 1;
+	}
+}
+
+.gameBoardPlay {
+	display: flex;
+	margin-top: 4rem;
+	justify-content: center;
+	align-items: center;
+
+	height: 50vh;
+
+	gap: 5rem;
+
+	.gameSymbol {
+		width: 300px;
+		aspect-ratio: 1;
+
+		.symbolContainer {
+			aspect-ratio: 1;
+			width: 224px;
+			border-top: 8px solid #babfd4;
+		}
+
+		img {
+			width: 110px;
+			aspect-ratio: 1;
+		}
 	}
 }
 
