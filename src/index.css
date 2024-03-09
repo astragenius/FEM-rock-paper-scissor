@@ -308,7 +308,7 @@ button {
 /* GameBoard */
 .gameBoard,
 .gameBoardAdvanced {
-	border: 2px solid magenta;
+	/* border: 2px solid magenta; */
 
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -402,7 +402,20 @@ button {
 
 	height: 50vh;
 
-	gap: 5rem;
+	gap: 4.5rem;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4rem;
+	}
+	.placeholder {
+		width: 300px;
+		aspect-ratio: 1;
+		background-color: hsla(0, 0%, 0%, 0.194);
+		border-radius: 50%;
+	}
 
 	.gameSymbol {
 		width: 300px;
