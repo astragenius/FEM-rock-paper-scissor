@@ -200,6 +200,9 @@ textarea:not([rows]) {
 .fs-64-40 {
 	font-size: clamp(2.5rem, 1.9718rem + 2.2535vi, 4rem);
 }
+.fs-56 {
+	font-size: var(--fs-56);
+}
 
 .fs-32 {
 	font-size: var(--fs-32);
@@ -432,6 +435,21 @@ button {
 			aspect-ratio: 1;
 		}
 	}
+}
+.playAgain-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	min-width: 13rem;
+	align-items: center;
+}
+
+.play-btn {
+	background-color: var(--clr-base);
+	color: var(--clr-dark-text);
+	border-radius: 8px;
+	padding-inline: 2.5rem;
+	padding-block: 1rem;
 }
 
 /* GameSymbol */
