@@ -299,9 +299,8 @@ button {
 /* GameBoard */
 .gameBoard,
 .gameBoardAdvanced {
-	border: 2px solid magenta;
+	/* border: 2px solid magenta; */
 
-	/* background-image: url(./assets/BackgroundImages/bg-triangle.svg); */
 	background-repeat: no-repeat;
 	background-position: center center;
 
@@ -310,20 +309,79 @@ button {
 
 	margin-top: 4rem;
 
-	.gameBoardGrid {
+	.gridBase {
 		display: grid;
 		grid-template-rows: repeat(4, 1fr);
 		grid-template-columns: repeat(4, 1fr);
 		height: 50vh;
 		column-gap: 70px;
+
+		.gameSymbol {
+			width: 200px;
+			aspect-ratio: 1;
+
+			.symbolContainer {
+				aspect-ratio: 1;
+				width: 152px;
+			}
+		}
+
+		.rock {
+			grid-area: 1 / 1 / 3 / 3;
+			align-self: center;
+		}
+		.paper {
+			grid-area: 3 / 2 / 5 / 4;
+			align-self: center;
+		}
+		.scissors {
+			grid-area: 1 / 3 / 3 / 5;
+			align-self: center;
+		}
+
+		img {
+			width: 73px;
+			height: 86px;
+		}
 	}
 
-	.gameBoardGridAdvanced {
+	.gridAdvanced {
 		display: grid;
-		grid-template-rows: repeat(4, 1fr);
-		grid-template-columns: repeat(4, 1fr);
-		height: 50vh;
-		column-gap: 70px;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: repeat(9, 1fr);
+
+		.gameSymbol {
+			width: 145px;
+			aspect-ratio: 1;
+
+			.symbolContainer {
+				aspect-ratio: 1;
+				width: 112px;
+				border-top: 8px solid #babfd4;
+			}
+		}
+
+		.scissors {
+			grid-area: 2 / 4 / 4 / 6;
+		}
+		.spock {
+			grid-area: 4 / 2 / 6 / 4;
+		}
+		.lizard {
+			grid-area: 7 / 2 / 9 / 4;
+		}
+		.rock {
+			grid-area: 7 / 6 / 9 / 8;
+			place-self: center;
+		}
+		.paper {
+			grid-area: 4 / 6 / 6 / 8;
+		}
+	}
+
+	img {
+		width: 44px;
+		aspect-ratio: 1;
 	}
 }
 
@@ -333,24 +391,16 @@ button {
 	cursor: pointer;
 	display: grid;
 	place-items: center;
-	width: 145px;
-	aspect-ratio: 1;
 
 	border-radius: 50%;
 
 	.symbolContainer {
 		display: grid;
 		place-items: center;
-		aspect-ratio: 1;
-		width: 112px;
+
 		border-radius: 50%;
 		border-top: 11px solid #babfd4;
 		background-color: white;
-	}
-
-	img {
-		width: 44px;
-		aspect-ratio: 1;
 	}
 }
 
@@ -358,23 +408,16 @@ button {
 	/* filter: drop-shadow(0px 11px #9d1634); */
 	border-bottom: 11px solid #9d1634;
 	background: var(--clr-rock);
-	grid-area: 1 / 1 / 3 / 3;
-	align-self: center;
 }
 .paper {
 	/* filter: drop-shadow(0px 11px #2a45c2); */
 	border-bottom: 11px solid #2a45c2;
 	background: var(--clr-paper);
-
-	grid-area: 3 / 2 / 5 / 4;
-	align-self: center;
 }
 .scissors {
 	/* filter: drop-shadow(0px 11px #c76c1b); */
 	border-bottom: 11px solid #c76c1b;
 	background: var(--clr-scissors);
-	grid-area: 1 / 3 / 3 / 5;
-	align-self: center;
 }
 .lizard {
 	filter: drop-shadow(0px 11px #5f37a8);

@@ -48,7 +48,9 @@ const GameBoard = ({ gameMode }) => {
 			icon: "/public/Icons/icon-spock.svg",
 		},
 	];
-	console.log(bgImageAdvanced);
+
+	const symbolRender = gameMode ? symbolsDefault : symbolsBonus;
+
 	return (
 		<main className="wrapper">
 			<div
@@ -59,8 +61,8 @@ const GameBoard = ({ gameMode }) => {
 				}}
 				className="gameBoard"
 			>
-				<div className="gameBoardGrid">
-					{symbolsDefault.map((symbol) => {
+				<div className={gameMode ? "gridBase" : "gridAdvanced"}>
+					{symbolRender.map((symbol) => {
 						return (
 							<Symbol key={symbol.id} name={symbol.name} icon={symbol.icon} />
 						);
