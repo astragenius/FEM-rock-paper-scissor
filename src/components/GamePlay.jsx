@@ -3,7 +3,7 @@ import Placeholder from "./Placeholder";
 import PlayAgain from "./PlayAgain";
 import Symbol from "./Symbol";
 
-const GamePlay = () => {
+const GamePlay = ({ playerChoice, computerChoice }) => {
 	const [isPending, setPending] = useState(true);
 	const [modal, showModal] = useState(false);
 
@@ -23,7 +23,11 @@ const GamePlay = () => {
 			<div className="gameBoardPlay">
 				<div className="container">
 					<h3 className="fs-24-15 text-uppercase ls-30 fw-600">You Picked</h3>
-					<Symbol key={1} name={"rock"} icon={"/public/Icons/icon-rock.svg"} />
+					<Symbol
+						key={playerChoice.id}
+						name={playerChoice.name}
+						icon={playerChoice.icon}
+					/>
 				</div>
 				{modal && <PlayAgain status={"Draw"} />}
 
@@ -36,9 +40,9 @@ const GamePlay = () => {
 						<Placeholder />
 					) : (
 						<Symbol
-							key={1}
-							name={"rock"}
-							icon={"/public/Icons/icon-rock.svg"}
+							key={computerChoice.id}
+							name={computerChoice.name}
+							icon={computerChoice.icon}
 						/>
 					)}
 				</div>

@@ -2,20 +2,20 @@ import bgImageAdvanced from "../assets/BackgroundImages/bg-pentagon.svg";
 import bgImageDefault from "../assets/BackgroundImages/bg-triangle.svg";
 import Symbol from "./Symbol";
 
-const GameStart = ({ gameMode, setGameStart }) => {
+const GameStart = ({ gameMode, playGame }) => {
 	const symbolsDefault = [
 		{
-			id: 1,
+			id: 0,
 			name: "rock",
 			icon: "/public/Icons/icon-rock.svg",
 		},
 		{
-			id: 2,
+			id: 1,
 			name: "paper",
 			icon: "/public/Icons/icon-paper.svg",
 		},
 		{
-			id: 3,
+			id: 2,
 			name: "scissors",
 			icon: "/public/Icons/icon-scissors.svg",
 		},
@@ -23,27 +23,27 @@ const GameStart = ({ gameMode, setGameStart }) => {
 
 	const symbolsBonus = [
 		{
-			id: 1,
+			id: 0,
 			name: "rock",
 			icon: "/public/Icons/icon-rock.svg",
 		},
 		{
-			id: 2,
+			id: 1,
 			name: "paper",
 			icon: "/public/Icons/icon-paper.svg",
 		},
 		{
-			id: 3,
+			id: 2,
 			name: "scissors",
 			icon: "/public/Icons/icon-scissors.svg",
 		},
 		{
-			id: 4,
+			id: 3,
 			name: "lizard",
 			icon: "/public/Icons/icon-lizard.svg",
 		},
 		{
-			id: 5,
+			id: 4,
 			name: "spock",
 			icon: "/public/Icons/icon-spock.svg",
 		},
@@ -65,9 +65,10 @@ const GameStart = ({ gameMode, setGameStart }) => {
 						return (
 							<Symbol
 								key={symbol.id}
+								index={symbol.id}
 								name={symbol.name}
 								icon={symbol.icon}
-								setGameStart={setGameStart}
+								playGame={playGame}
 							/>
 						);
 					})}
