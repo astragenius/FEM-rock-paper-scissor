@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GamePlay from "./GamePlay";
 import GameStart from "./GameStart";
 
@@ -6,6 +6,7 @@ const GameBoard = ({ gameMode }) => {
 	const [gameStart, setGameStart] = useState(false);
 	const [playerChoice, setPlayerChoice] = useState({});
 	const [computerChoice, setComputerChoice] = useState({});
+
 	const symbolsDefault = [
 		{
 			id: 0,
@@ -52,6 +53,22 @@ const GameBoard = ({ gameMode }) => {
 		},
 	];
 
+	const defaultCheck = {
+		paper: { weakTo: "scissors", strongTo: "rock" },
+		rock: { weakTo: "paper", strongTo: "scissors" },
+		scissors: { weakTo: "rock", strongTo: "paper" },
+	};
+
+	const checkWinner = (p1, c1) => {
+		if (defaultCheck[p1].strongTo === c1) {
+			return "You Win";
+		} else if (defaultCheck[p1].weakTo === c1) {
+			return "You Lose";
+		} else {
+			return "Tie";
+		}
+	};
+
 	const randomChoice = () => {
 		if (gameMode === true) {
 			let randomId = Math.floor(Math.random() * symbolsDefault.length);
@@ -82,7 +99,12 @@ const GameBoard = ({ gameMode }) => {
 	return (
 		<main className="wrapper">
 			{gameStart ? (
-				<GamePlay playerChoice={playerChoice} computerChoice={computerChoice} />
+				<GamePlay
+					playerChoice={playerChoice}
+					computerChoice={computerChoice}
+					checkWinner={checkWinner}
+					setGameStart={setGameStart}
+				/>
 			) : (
 				<GameStart gameMode={gameMode} playGame={playGame} />
 			)}

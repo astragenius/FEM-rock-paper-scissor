@@ -3,21 +3,29 @@ import Placeholder from "./Placeholder";
 import PlayAgain from "./PlayAgain";
 import Symbol from "./Symbol";
 
-const GamePlay = ({ playerChoice, computerChoice }) => {
+const GamePlay = ({
+	playerChoice,
+	computerChoice,
+	checkWinner,
+	setGameStart,
+}) => {
 	const [isPending, setPending] = useState(true);
 	const [modal, showModal] = useState(false);
+	const [status, setStatus] = useState("");
 
 	useEffect(() => {
+		setStatus(checkWinner(playerChoice.name, computerChoice.name));
 		setInterval(() => {
 			setPending(false);
 		}, 1000);
-	});
+	}, []);
 
 	useEffect(() => {
 		setInterval(() => {
 			showModal(true);
 		}, 2000);
-	}, [isPending]);
+	}, []);
+
 	return (
 		<>
 			<div className="gameBoardPlay">
@@ -29,7 +37,7 @@ const GamePlay = ({ playerChoice, computerChoice }) => {
 						icon={playerChoice.icon}
 					/>
 				</div>
-				{modal && <PlayAgain status={"Draw"} />}
+				{modal && <PlayAgain status={status} setGameStart={setGameStart} />}
 
 				<div className="container">
 					<h3 className="fs-24-15 text-uppercase ls-30 fw-600">
