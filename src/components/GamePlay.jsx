@@ -14,7 +14,6 @@ const GamePlay = ({
 	const [status, setStatus] = useState("");
 
 	useEffect(() => {
-		setStatus(checkWinner(playerChoice.name, computerChoice.name));
 		setInterval(() => {
 			setPending(false);
 		}, 1000);
@@ -22,6 +21,7 @@ const GamePlay = ({
 
 	useEffect(() => {
 		setInterval(() => {
+			setStatus(checkWinner(playerChoice.name, computerChoice.name));
 			showModal(true);
 		}, 2000);
 	}, []);

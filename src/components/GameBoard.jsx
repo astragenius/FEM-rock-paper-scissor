@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import GamePlay from "./GamePlay";
 import GameStart from "./GameStart";
 
-const GameBoard = ({ gameMode }) => {
+const GameBoard = ({ gameMode, setScore, score }) => {
 	const [gameStart, setGameStart] = useState(false);
 	const [playerChoice, setPlayerChoice] = useState({});
 	const [computerChoice, setComputerChoice] = useState({});
@@ -61,6 +61,7 @@ const GameBoard = ({ gameMode }) => {
 
 	const checkWinner = (p1, c1) => {
 		if (defaultCheck[p1].strongTo === c1) {
+			setScore(score + 1);
 			return "You Win";
 		} else if (defaultCheck[p1].weakTo === c1) {
 			return "You Lose";
@@ -103,7 +104,6 @@ const GameBoard = ({ gameMode }) => {
 					playerChoice={playerChoice}
 					computerChoice={computerChoice}
 					checkWinner={checkWinner}
-					setGameStart={setGameStart}
 				/>
 			) : (
 				<GameStart gameMode={gameMode} playGame={playGame} />
