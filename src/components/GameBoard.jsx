@@ -58,6 +58,13 @@ const GameBoard = ({ gameMode, setScore, score }) => {
 		rock: { weakTo: "paper", strongTo: "scissors" },
 		scissors: { weakTo: "rock", strongTo: "paper" },
 	};
+	const bonusCheck = {
+		paper: { weakTo: ["lizard", "scissors"], strongTo: ["spock", "rock"] },
+		rock: { weakTo: ["paper", "spock"], strongTo: ["scissors", "lizard"] },
+		scissors: { weakTo: ["rock", "spock"], strongTo: ["paper", "lizard"] },
+		spock: { weakTo: ["paper", "lizard"], strongTo: ["scissors", "rock"] },
+		lizard: { weakTo: ["scissors", "rock"], strongTo: ["spock", "paper"] },
+	};
 
 	const checkWinner = (p1, c1) => {
 		if (defaultCheck[p1].strongTo === c1) {
@@ -104,6 +111,7 @@ const GameBoard = ({ gameMode, setScore, score }) => {
 					playerChoice={playerChoice}
 					computerChoice={computerChoice}
 					checkWinner={checkWinner}
+					setGameStart={setGameStart}
 				/>
 			) : (
 				<GameStart gameMode={gameMode} playGame={playGame} />

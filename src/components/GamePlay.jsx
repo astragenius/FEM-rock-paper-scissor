@@ -17,14 +17,13 @@ const GamePlay = ({
 		setInterval(() => {
 			setPending(false);
 		}, 1000);
-	}, []);
-
-	useEffect(() => {
 		setInterval(() => {
-			setStatus(checkWinner(playerChoice.name, computerChoice.name));
 			showModal(true);
 		}, 2000);
+		setStatus(checkWinner(playerChoice.name, computerChoice.name));
 	}, []);
+
+	useEffect(() => {}, []);
 
 	return (
 		<>
