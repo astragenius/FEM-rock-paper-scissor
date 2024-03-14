@@ -8,6 +8,7 @@ const Header = ({ gameMode, score }) => {
 					<h1>
 						<img
 							className="logo"
+							style={gameMode ? null : { width: "111px", height: "110px" }}
 							src={gameMode ? logoDefault : logoAdvanced}
 							alt=""
 						/>

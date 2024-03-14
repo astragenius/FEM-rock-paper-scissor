@@ -53,12 +53,6 @@ const GameBoard = ({ gameMode, setScore, score }) => {
 		},
 	];
 
-	/* const defaultCheck = {
-		paper: { weakTo: "scissors", strongTo: "rock" },
-		rock: { weakTo: "paper", strongTo: "scissors" },
-		scissors: { weakTo: "rock", strongTo: "paper" },
-	}; */
-
 	const checkWinner = (p1, c1) => {
 		const items = {
 			paper: { weakTo: ["lizard", "scissors"], strongTo: ["spock", "rock"] },
@@ -71,7 +65,7 @@ const GameBoard = ({ gameMode, setScore, score }) => {
 			setScore(score + 1);
 			return "You Win";
 		} else if (items[p1].weakTo.find((el) => el === c1) === c1) {
-			return "You Lost";
+			return "You Lose";
 		} else {
 			return "Tie";
 		}

@@ -375,19 +375,24 @@ button {
 
 		.scissors {
 			grid-area: 2 / 4 / 4 / 6;
+			border-width: 8px;
 		}
 		.spock {
 			grid-area: 4 / 2 / 6 / 4;
+			border-width: 8px;
 		}
 		.lizard {
 			grid-area: 7 / 2 / 9 / 4;
+			border-width: 8px;
 		}
 		.rock {
 			grid-area: 7 / 6 / 9 / 8;
+			border-width: 8px;
 			place-self: center;
 		}
 		.paper {
 			grid-area: 4 / 6 / 6 / 8;
+			border-width: 8px;
 		}
 	}
 
@@ -487,11 +492,13 @@ button {
 	background: var(--clr-scissors);
 }
 .lizard {
-	filter: drop-shadow(0px 11px #5f37a8);
+	border-bottom: 11px solid #5f37a8;
+	/* filter: drop-shadow(0px 11px #5f37a8); */
 	background: var(--clr-lizard);
 }
 .spock {
-	filter: drop-shadow(0px 11px #2d8dab);
+	/* filter: drop-shadow(0px 11px #2d8dab); */
+	border-bottom: 11px solid #2d8dab;
 	background: var(--clr-spock);
 }
 

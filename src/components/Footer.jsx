@@ -16,7 +16,7 @@ const Footer = ({ gameMode, setGameMode }) => {
 						className="btn-rules ls-25 fs-16 text-uppercase"
 						onClick={() => setGameMode((prev) => !prev)}
 					>
-						{gameMode ? "Switch to Basic" : "Switch to Advanced"}
+						{gameMode ? "Switch to Advanced" : "Switch to Basic"}
 					</motion.button>
 					<motion.button
 						whileHover={{ scale: 1.1 }}
