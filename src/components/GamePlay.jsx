@@ -12,6 +12,15 @@ const GamePlay = ({
 	const [isPending, setPending] = useState(true);
 	const [modal, showModal] = useState(false);
 	const [status, setStatus] = useState("");
+	const [isMobile, setMobile] = useState(window.innerWidth < 490);
+
+	const updateMedia = () => {
+		setMobile(window.innerWidth < 490);
+	};
+	useEffect(() => {
+		window.addEventListener("resize", updateMedia);
+		return () => window.removeEventListener("resize", updateMedia);
+	});
 
 	useEffect(() => {
 		setInterval(() => {
@@ -22,8 +31,6 @@ const GamePlay = ({
 		}, 2000);
 		setStatus(checkWinner(playerChoice.name, computerChoice.name));
 	}, []);
-
-	useEffect(() => {}, []);
 
 	return (
 		<>
@@ -36,7 +43,9 @@ const GamePlay = ({
 						icon={playerChoice.icon}
 					/>
 				</div>
-				{modal && <PlayAgain status={status} setGameStart={setGameStart} />}
+				{modal && !isMobile && (
+					<PlayAgain status={status} setGameStart={setGameStart} />
+				)}
 
 				<div className="container">
 					<h3 className="fs-24-15 text-uppercase ls-30 fw-600">
@@ -54,6 +63,9 @@ const GamePlay = ({
 					)}
 				</div>
 			</div>
+			{modal && isMobile && (
+				<PlayAgain status={status} setGameStart={setGameStart} />
+			)}
 		</>
 	);
 };
