@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import logoAdvanced from "../assets/icons/logo-bonus.svg";
 import logoDefault from "../assets/icons/logo.svg";
 const Header = ({ gameMode, score }) => {

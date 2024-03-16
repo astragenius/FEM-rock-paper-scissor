@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import { useEffect, useState } from "react";
 import Placeholder from "./Placeholder";
 import PlayAgain from "./PlayAgain";

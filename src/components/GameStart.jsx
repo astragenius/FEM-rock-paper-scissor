@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Symbol from "./Symbol";
 import bgImageAdvanced from "/BackgroundImages/bg-pentagon.svg";
 import bgImageDefault from "/BackgroundImages/bg-triangle.svg";
