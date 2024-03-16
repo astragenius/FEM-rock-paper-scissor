@@ -25,7 +25,7 @@ const GameStart = ({ gameMode, playGame }) => {
 		{
 			id: 0,
 			name: "rock",
-			icon: "/icon-rock.svg",
+			icon: "Icons/icon-rock.svg",
 		},
 		{
 			id: 1,
