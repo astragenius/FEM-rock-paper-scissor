@@ -1,6 +1,6 @@
+import bgImageAdvanced from "../assets/BackgroundImages/bg-pentagon.svg";
+import bgImageDefault from "../assets/BackgroundImages/bg-triangle.svg";
 import Symbol from "./Symbol";
-import bgImageAdvanced from "/BackgroundImages/bg-pentagon.svg";
-import bgImageDefault from "/BackgroundImages/bg-triangle.svg";
 
 const GameStart = ({ gameMode, playGame }) => {
 	const symbolsDefault = [

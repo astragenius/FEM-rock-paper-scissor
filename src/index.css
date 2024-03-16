@@ -253,7 +253,6 @@ body {
 	font-family: var(--ff-base);
 	background: var(--radial-bg);
 	color: var(--clr-base);
-	overflow: hidden;
 }
 
 button {
