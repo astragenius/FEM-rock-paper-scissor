@@ -11,17 +11,17 @@ const GameBoard = ({ gameMode, setScore, score }) => {
 		{
 			id: 0,
 			name: "rock",
-			icon: "/public/Icons/icon-rock.svg",
+			icon: "/Icons/icon-rock.svg",
 		},
 		{
 			id: 1,
 			name: "paper",
-			icon: "/public/Icons/icon-paper.svg",
+			icon: "/Icons/icon-paper.svg",
 		},
 		{
 			id: 2,
 			name: "scissors",
-			icon: "/public/Icons/icon-scissors.svg",
+			icon: "/Icons/icon-scissors.svg",
 		},
 	];
 
@@ -29,27 +29,27 @@ const GameBoard = ({ gameMode, setScore, score }) => {
 		{
 			id: 0,
 			name: "rock",
-			icon: "/public/Icons/icon-rock.svg",
+			icon: "/Icons/icon-rock.svg",
 		},
 		{
 			id: 1,
 			name: "paper",
-			icon: "/public/Icons/icon-paper.svg",
+			icon: "/Icons/icon-paper.svg",
 		},
 		{
 			id: 2,
 			name: "scissors",
-			icon: "/public/Icons/icon-scissors.svg",
+			icon: "/Icons/icon-scissors.svg",
 		},
 		{
 			id: 3,
 			name: "lizard",
-			icon: "/public/Icons/icon-lizard.svg",
+			icon: "/Icons/icon-lizard.svg",
 		},
 		{
 			id: 4,
 			name: "spock",
-			icon: "/public/Icons/icon-spock.svg",
+			icon: "/Icons/icon-spock.svg",
 		},
 	];
 
