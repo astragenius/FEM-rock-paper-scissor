@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RulesModal from "./RulesModal";
 
 const Footer = ({ gameMode, setGameMode }) => {
 	const [open, setOpen] = useState(false);
+
+	useEffect(() => {
+		if (open === true) {
+			document.body.classList.add("modal-open");
+		} else {
+			document.body.classList.remove("modal-open");
+		}
+	}, [open]);
 
 	return (
 		<>

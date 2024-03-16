@@ -48,7 +48,7 @@ const GamePlay = ({
 				)}
 
 				<div className="container">
-					<h3 className="fs-24-15 text-uppercase ls-30 fw-600">
+					<h3 className="fs-24-15 text-uppercase ls-20 fw-600">
 						The House Picked
 					</h3>
 
