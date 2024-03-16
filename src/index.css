@@ -319,6 +319,12 @@ button {
 	}
 }
 
+@media (max-width: 490px) {
+	.score-header {
+		margin-block-start: 10px;
+	}
+}
+
 /* GameBoard */
 .gameBoard,
 .gameBoardAdvanced {
