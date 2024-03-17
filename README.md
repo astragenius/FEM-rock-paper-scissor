@@ -62,6 +62,7 @@
 - [x] Score points get added when you win a round.
 - [x] App is responsive to (375px) mobile phones.
 - [x] Hover and pop up animation created with Framer Motion animation Library
+- [x] Score get saved to the local storage
 
 ### Built With
 

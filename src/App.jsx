@@ -6,7 +6,7 @@ import Header from "./components/Header";
 
 function App() {
 	const [gameMode, setGameMode] = useState(true);
-	/* const [score, setScore] = useState(0); */
+
 	const [score, setScore] = useLocalStorage("points", 0);
 	return (
 		<>
@@ -14,7 +14,11 @@ function App() {
 
 			<GameBoard gameMode={gameMode} score={score} setScore={setScore} />
 
-			<Footer gameMode={gameMode} setGameMode={setGameMode} />
+			<Footer
+				gameMode={gameMode}
+				setGameMode={setGameMode}
+				setScore={setScore}
+			/>
 		</>
 	);
 }
