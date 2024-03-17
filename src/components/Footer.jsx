@@ -6,8 +6,6 @@ import RulesModal from "./RulesModal";
 const Footer = ({ gameMode, setGameMode, setScore }) => {
 	const [open, setOpen] = useState(false);
 
-	const resetScore = () => {};
-
 	useEffect(() => {
 		if (open === true) {
 			document.body.classList.add("modal-open");

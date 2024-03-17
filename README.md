@@ -63,6 +63,7 @@
 - [x] App is responsive to (375px) mobile phones.
 - [x] Hover and pop up animation created with Framer Motion animation Library
 - [x] Score get saved to the local storage
+- [x] Score can set to zero by clicking on the Reset button
 
 ### Built With
 
