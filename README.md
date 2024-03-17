@@ -53,14 +53,15 @@
 </div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-<h4>Implementet functionality</h4>
+<h4>Implemented functionality</h4>
 
-- [x] Users can Switch between serif, sans serif, and monospace fonts
-- [x] Users can Switch between light and dark themes
-- [x] Responsive layout for Mobile/Tablet and Desktop devices.
-- [x] Users can play an AudioFile by clicking on the Play button
-- [x] Users can see a form validation message when trying to submit a blank form.
-- [x] Users can see an error site if the word was not found.
+- [x] Users can open a modal that shows the Rules of the Game
+- [x] Users can switch between the Basic and the advanced version of the Game
+- [x] The Correct rules get shown according to the Game mode you choose.
+- [x] The Game starts when you click on the Symbol at the start screen.
+- [x] Score points get added when you win a round.
+- [x] App is responsive to (375px) mobile phones.
+- [x] Hover and pop up animation created with Framer Motion animation Library
 
 ### Built With
 
