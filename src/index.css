@@ -477,7 +477,7 @@ button {
 
 .gameBoardPlay {
 	display: flex;
-	margin-top: 4rem;
+	margin-top: 1rem;
 	justify-content: center;
 	align-items: center;
 
@@ -621,9 +621,9 @@ button {
 	text-align: right;
 
 	/* padding-inline-end: 30px; */
-	padding-block-end: 30px;
+	padding-block-end: 20px;
 
-	margin-block-end: 40px;
+	margin-block-end: 30px;
 
 	@media (max-width: 490px) {
 		.container {
