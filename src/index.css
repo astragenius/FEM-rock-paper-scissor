@@ -34,7 +34,7 @@ ol[role="list"] {
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
+	min-height: 100dvh;
 	line-height: 1;
 }
 
@@ -321,7 +321,7 @@ button {
 
 @media (max-width: 490px) {
 	.score-header {
-		margin-block-start: 10px;
+		margin-block-start: 0px;
 	}
 }
 
@@ -340,7 +340,7 @@ button {
 		display: grid;
 		grid-template-rows: repeat(4, 1fr);
 		grid-template-columns: repeat(4, 1fr);
-		height: 50vh;
+		height: 50dvh;
 		column-gap: 70px;
 
 		.gameSymbol {
@@ -481,7 +481,7 @@ button {
 	justify-content: center;
 	align-items: center;
 
-	height: 50vh;
+	height: 50dvh;
 
 	gap: 4.5rem;
 
@@ -622,8 +622,6 @@ button {
 
 	/* padding-inline-end: 30px; */
 	padding-block-end: 20px;
-
-	margin-block-end: 30px;
 
 	@media (max-width: 490px) {
 		.container {
