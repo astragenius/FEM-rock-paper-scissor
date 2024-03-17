@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
-
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import GamePlay from "./GamePlay";
 import GameStart from "./GameStart";
 
