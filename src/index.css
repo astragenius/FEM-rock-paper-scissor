@@ -396,6 +396,7 @@ button {
 		display: grid;
 		grid-template-columns: repeat(8, 1fr);
 		grid-template-rows: repeat(9, 1fr);
+		margin-right: 1rem;
 
 		.gameSymbol {
 			width: 145px;
