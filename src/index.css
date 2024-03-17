@@ -526,11 +526,6 @@ button {
 			aspect-ratio: 1;
 		}
 	}
-	@media (max-width: 490px) {
-		.gameBoardPlay {
-			margin-top: 0.5rem;
-		}
-	}
 
 	@media (max-width: 490px) {
 		.gameSymbol {
@@ -553,7 +548,7 @@ button {
 @media (max-width: 490px) {
 	.gameBoardPlay {
 		height: 35vh;
-
+		margin-top: 0px;
 		gap: 4rem;
 	}
 }
